@@ -1,7 +1,9 @@
-# -> Se realiza una pantalla de LOGIN
+# -> Se realiza una pantalla de LOGIN ✔
+# --> verificar alineacion de componentes. para que quede responsive.
 # -> Campos: Usuario y contraseña
 # -> Se validan ambos campos para permitir ingreso
-# -> Se CREA CUENTA 
+# -> Se CREA CUENTA ✔
+# -> agregar FUNCIONALIDAD
 
 #-------------------------------------------------
 
@@ -30,7 +32,7 @@ container = ft.Container (   # creo el CONTENEDOR PPAL
                 color= "white",   # > cuando escribo el color es blanco
                 prefix_icon= ft.icons.EMAIL
             ),
-            padding= ft.padding.only(20,20)
+            padding= ft.padding.only(60) #ft.padding.only(20,20)
         ),
         ft.Container(
             ft.TextField(
@@ -42,20 +44,52 @@ container = ft.Container (   # creo el CONTENEDOR PPAL
                 prefix_icon=ft.icons.LOCK,
                 password=True
             ),
-            padding=ft.padding.only(20,20)
+            padding=ft.padding.only(60)
         ),
         ft.Container(
             ft.Checkbox(
                 label= "Recordar Contraseña",
                 check_color= "white"
             ),
-            padding=ft.padding.only(180)
+            padding=ft.padding.only(240) # + mueve a la derecha
         ),
         ft.Container(
             ft.ElevatedButton(
-                text= "Iniciar"
+                text= "Ingresar",
+                width=280
             ),
-            padding=ft.padding.only(50)
+            padding=ft.padding.only(100)
+        ),
+        ft.Text("Iniciar Sesión con ",
+                text_align= "center",
+                width= 480
+                ),
+        ft.Container(
+            ft.Row([
+                ft.IconButton(
+                    icon= ft.icons.EMAIL,
+                    tooltip= "Google",
+                    icon_color= "white",
+                    icon_size=30
+                ),
+                ft.IconButton (
+                    icon= ft.icons.FACEBOOK,
+                    tooltip= "Facebook",
+                    icon_color= "white",
+                    icon_size=30
+                )
+            ],
+            alignment= ft.MainAxisAlignment.CENTER # -> propiedad de alineacion
+            ),
+            #padding= ft.padding.only(180)
+        ),
+        ft.Container(
+            ft.Row ([
+                ft.Text ("¿No Tiene Cuenta?"),
+                ft.TextButton("Crear Cuenta")
+            ],
+            alignment=ft.MainAxisAlignment.CENTER
+            )
         )
     ],
     alignment= ft.MainAxisAlignment.SPACE_EVENLY
