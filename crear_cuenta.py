@@ -1,7 +1,7 @@
-# -> se diseña pantalla para que el usuario cree cuenta
+# -> se diseña pantalla para que el usuario cree cuenta ✔
 # -> se almacena datos en BBDD
 # -> hay boton de regreso a pantalla anterior
-# -> hay boton de lOGIN y se ingresa a sistema
+# -> hay boton de REGISTRARSE y se ingresa a sistema
 
 #-------------------------------------------------
 import flet as ft
@@ -17,7 +17,7 @@ container = ft.Container (
                 weight= "w900",
                 color= ft.colors.WHITE
             ),
-           # padding = ft.padding.only(20,20)
+            padding = ft.padding.all(30) # queda responsive
         ),
         ft.Container(
             ft.TextField (
@@ -29,7 +29,59 @@ container = ft.Container (
             ),
             padding= ft.padding.only(60)  #verificar alineacion!
         ),
-    ])
+        ft.Container(
+            ft.TextField(
+                width=350,
+                height= 40,
+                hint_text= "Usuario",
+                border= "underline",
+                color= "white"
+            ),
+            padding= ft.padding.only(60)
+        ),
+         ft.Container(
+
+            ft.TextField(
+                width= 350,
+                height= 40,
+                hint_text= "Contraseña",
+                border= "underline",
+                color= "white"
+            ),
+            padding= ft.padding.only(60)
+         ),
+         ft.Container(
+             ft.TextField(
+                 width= 350,
+                 height= 40,
+                 hint_text= "Repita Contraseña",
+                 border= "underline",
+                 color= "white"
+             ),
+             padding= ft.padding.only(60)
+         ),
+         ft.Container(
+             ft.Row([
+                   ft.ElevatedButton(
+                      text= "Registrarse",
+                      width= 260                
+                    ), 
+             ],
+               alignment= ft.MainAxisAlignment.CENTER
+             ),
+             padding= ft.padding.only(top=25)
+         )
+    ],
+  
+    ),
+    border_radius= 20,
+    width= 480,
+    height= 500,
+    gradient= ft.LinearGradient(  #-> indico qué colores forman el degradado
+        [ft.colors.PURPLE,
+         ft.colors.PURPLE_200,
+         ft.colors.PURPLE_100]
+    )
 )
 
 
