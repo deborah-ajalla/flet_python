@@ -1,6 +1,6 @@
 # -> Se realiza una pantalla de LOGIN ✔
 # --> verificar alineacion de componentes. para que quede responsive.
-# -> Campos: Usuario y contraseña
+# -> Campos: Usuario y contraseña ✔
 # -> Se validan ambos campos para permitir ingreso
 # -> Se CREA CUENTA ✔
 # -> agregar FUNCIONALIDAD
