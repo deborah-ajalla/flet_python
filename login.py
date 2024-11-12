@@ -42,14 +42,16 @@ container = ft.Container (   # creo el CONTENEDOR PPAL
                 border= "underline",
                 color= "white",
                 prefix_icon=ft.icons.LOCK,
-                password=True
+                password=True,
+                can_reveal_password= True  # el ojito para ver/ ocultar
             ),
             padding=ft.padding.only(60)
         ),
         ft.Container(
-            ft.Checkbox(
-                label= "Recordar Contraseña",
-                check_color= "white"
+            ft.TextButton(
+                "¿Olvidó su Contraseña?",
+                 style= ft.ButtonStyle (
+                     color = "white") 
             ),
             padding=ft.padding.only(240) # + mueve a la derecha
         ),
@@ -60,9 +62,11 @@ container = ft.Container (   # creo el CONTENEDOR PPAL
             ),
             padding=ft.padding.only(100)
         ),
-        ft.Text("Iniciar Sesión con ",
+        ft.Text("Ingresar con",
                 text_align= "center",
-                width= 480
+                width= 480,
+                size= 17,
+                weight="w400"
                 ),
         ft.Container(
             ft.Row([
@@ -81,12 +85,16 @@ container = ft.Container (   # creo el CONTENEDOR PPAL
             ],
             alignment= ft.MainAxisAlignment.CENTER # -> propiedad de alineacion
             ),
-            #padding= ft.padding.only(180)
+            padding= ft.padding.only(top= -25)
         ),
         ft.Container(
             ft.Row ([
                 ft.Text ("¿No Tiene Cuenta?"),
-                ft.TextButton("Crear Cuenta")
+                ft.TextButton("Crear Cuenta",
+                              style= ft.ButtonStyle ( # le aplica estilo al textbutton
+                                  color= "white"                                  
+                              )
+                              )
             ],
             alignment=ft.MainAxisAlignment.CENTER
             )
