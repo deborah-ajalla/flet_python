@@ -1,6 +1,6 @@
 # -> se diseña pantalla para que el usuario cree cuenta ✔
 # -> se almacena datos en BBDD
-# -> hay boton de regreso a pantalla anterior
+# -> hay boton de regreso a pantalla anterior ✔
 # -> hay boton de REGISTRARSE y se ingresa a sistema
 
 #-------------------------------------------------
@@ -25,6 +25,7 @@ container = ft.Container (
                 height= 40,
                 hint_text= "Nombre",
                 border= "underline",
+                border_color= ft.colors.WHITE54,
                 color= "white"
             ),
             padding= ft.padding.only(60)  #verificar alineacion!
@@ -35,6 +36,7 @@ container = ft.Container (
                 height= 40,
                 hint_text= "Usuario",
                 border= "underline",
+                border_color= ft.colors.WHITE54,
                 color= "white"
             ),
             padding= ft.padding.only(60)
@@ -45,7 +47,11 @@ container = ft.Container (
                 width= 350,
                 height= 40,
                 hint_text= "Contraseña",
+                password= True,
+                can_reveal_password= True,
                 border= "underline",
+                border_color= ft.colors.WHITE54, # -> cuando hago click el borde se pone blanco
+                #focused_border_color= "grey",
                 color= "white"
             ),
             padding= ft.padding.only(60)
@@ -54,8 +60,11 @@ container = ft.Container (
              ft.TextField(
                  width= 350,
                  height= 40,
-                 hint_text= "Repita Contraseña",
+                 hint_text= "Repetir Contraseña",
+                 password= True,
+                 can_reveal_password= True,
                  border= "underline",
+                 border_color= ft.colors.WHITE54,
                  color= "white"
              ),
              padding= ft.padding.only(60)
@@ -69,7 +78,19 @@ container = ft.Container (
              ],
                alignment= ft.MainAxisAlignment.CENTER
              ),
-             padding= ft.padding.only(top=25)
+             padding= ft.padding.only(top=35)
+         ),
+         ft.Container(
+             width= 60,
+             height= 78,
+             border_radius= 10,
+             padding= ft.padding.symmetric(20),
+             content= ft.IconButton (
+             icon= ft.icons.ARROW_BACK_IOS_NEW_OUTLINED,
+             icon_color= ft.colors.WHITE54,
+             #style= ft.ButtonStyle ()
+            ), 
+            margin=ft.margin.only(left= 210)
          )
     ],
   
